@@ -13,12 +13,6 @@
 
 /* @import url('background.css'); */
 
-@media screen and (max-width: 600px) {
-    .element {
-        text-align:center;
-    }
-}
-
 html,
 body {
     height: 100%;
@@ -207,4 +201,10 @@ p {
 
 .smalltext {
     font-size: 15px;
+}
+
+@media screen and (max-width: 600px) {
+    .element {
+        text-align:center;
+    }
 }
