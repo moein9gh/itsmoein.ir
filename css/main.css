@@ -13,6 +13,12 @@
 
 /* @import url('background.css'); */
 
+@media screen and (max-width: 600px) {
+    .element {
+        text-align:center;
+    }
+}
+
 html,
 body {
     height: 100%;
@@ -66,6 +72,8 @@ p {
     top: 60%;
     transform: translateY(-50%);
 }
+
+
 
 #hero {
     height: 100%;
