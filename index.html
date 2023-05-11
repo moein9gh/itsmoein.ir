@@ -56,7 +56,7 @@
                                 class="fa fa-github wow fadeInUp white-text" data-wow-delay="250ms"
                                 style="visibility: visible; animation-delay: 250ms; animation-name: fadeInUp;font-size:50px !important;margin-inline:3px;"></i></a>
                     </h1>
-                    <!-- <a goto="#math" class="btn red grow circle">Swag</a> -->
+                    <p id="quote" style="text-align:center;padding:60px 0px 0px 0px;"></p>
                 </div>
             </div>
         </div>
@@ -141,19 +141,20 @@
                         <br>
 
                     </div>
-                    <!--<a target="_blank" href="https://drive.google.com/file/d/0B3KD7yJy-_ySNk9XTk1yN0FEMzg/view" style="color: #FFF"><h5>View my resume <i class="fa fa-angle-right"></i></h5></a>-->
-                    <!--<script>-->
-                    <!--    ! function (d, s, id) {-->
-                    <!--        var js, fjs = d.getElementsByTagName(s)[0],-->
-                    <!--            p = 'https';-->
-                    <!--        if (!d.getElementById(id)) {-->
-                    <!--            js = d.createElement(s);-->
-                    <!--            js.id = id;-->
-                    <!--            js.src = p + '://platform.twitter.com/widgets.js';-->
-                    <!--            fjs.parentNode.insertBefore(js, fjs);-->
-                    <!--        }-->
-                    <!--    }(document, 'script', 'twitter-wjs');-->
-                    <!--</script>-->
+                    <a target="_blank" href="https://drive.google.com/file/d/1pWxHmTNE2XBTbWgOcfovtv0vXlax8vlF/view" style="color: #FFF"><h5>View my resume <i class="fa fa-angle-right"></i></h5></a>
+                    <script>
+                        fetch("quotes.json")
+				.then(response => response.json())
+				.then(data => {
+                    // Pick a random quote from the data
+                    const randomIndex = Math.floor(Math.random() * data.length);
+                    const quote = data[randomIndex];
+
+                    // Display the quote on the page
+                    document.getElementById("quote").innerHTML = `"${quote.quote}" <br> - ${quote.author}`;
+                })
+				.catch(error => console.error(error));
+                    </script>
                 </ol>
             </form>
         </div>
